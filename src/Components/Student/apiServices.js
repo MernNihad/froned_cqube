@@ -8,7 +8,7 @@ const id_for_student=localStorage.getItem("id")
 
 export const login = async (data) => {
     try {
-      const res = await axios.post('http://localhost:4000/api/student/login', data);
+      const res = await axios.post('http://137.184.230.216:4000/api/student/login', data);
       console.log(res);
       localStorage.setItem("token", res.data.token);
       console.log(res,'ress');
@@ -38,7 +38,7 @@ export const login = async (data) => {
 
   export const getActivity = async () => {
     try {
-      const response = await axios.get(`http://localhost:4000/api/activity`,{
+      const response = await axios.get(`http://137.184.230.216:4000/api/activity`,{
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}` // Use the token for authorization
@@ -53,7 +53,7 @@ export const login = async (data) => {
 
   export const forgetPassword = async (requestData) => {
     try {
-      const response = await axios.post(`http://localhost:4000/api/resetpassword`,requestData,{
+      const response = await axios.post(`http://137.184.230.216:4000/api/resetpassword`,requestData,{
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}` // Use the token for authorization
@@ -69,7 +69,7 @@ export const login = async (data) => {
 
   export const resetPassword = async (requestData) => {
     try {
-      const response = await axios.post(`http://localhost:4000/api/resetpassword/reset`,requestData,{
+      const response = await axios.post(`http://137.184.230.216:4000/api/resetpassword/reset`,requestData,{
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}` // Use the token for authorization
@@ -85,7 +85,7 @@ export const login = async (data) => {
 
   export const Answer = async (requestData) => {
     try {
-      const response = await axios.post(`http://localhost:4000/api/activity/answer`,requestData,{
+      const response = await axios.post(`http://137.184.230.216:4000/api/activity/answer`,requestData,{
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}` // Use the token for authorization
@@ -101,7 +101,7 @@ export const login = async (data) => {
 
   export const UpdatedData = async (requestData) => {
     try {
-      const response = await axios.put(`http://localhost:4000/api/student/${id_for_student}`,requestData,{
+      const response = await axios.put(`http://137.184.230.216:4000/api/student/${id_for_student}`,requestData,{
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}` // Use the token for authorization
@@ -121,7 +121,7 @@ export const login = async (data) => {
 
   export const studentbyid = async () => {
   try {
-    const response = await axios.get(`http://localhost:4000/api/student/${id_for_student}`,{
+    const response = await axios.get(`http://137.184.230.216:4000/api/student/${id_for_student}`,{
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}` // Use the token for authorization
@@ -136,7 +136,7 @@ export const login = async (data) => {
 
 export const AttendenceByCount = async () => {
   try {
-    const response = await axios.get(`http://localhost:4000/api/attendance/counts`,{
+    const response = await axios.get(`http://137.184.230.216:4000/api/attendance/counts`,{
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}` // Use the token for authorization
@@ -151,7 +151,7 @@ export const AttendenceByCount = async () => {
 
 export const getattendencebyid = async () => {
   try {
-    const response = await axios.get(`http://localhost:4000/api/attendance/student`,{
+    const response = await axios.get(`http://137.184.230.216:4000/api/attendance/student`,{
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}` // Use the token for authorization
@@ -166,7 +166,7 @@ export const getattendencebyid = async () => {
 
 export const AttendenceByCountfilter = async (stdate,enddate) => {
   try {
-    const response = await axios.get(`http://localhost:4000/api/attendance/counts?startDate=${stdate}&endDate=${enddate}`,{
+    const response = await axios.get(`http://137.184.230.216:4000/api/attendance/counts?startDate=${stdate}&endDate=${enddate}`,{
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}` // Use the token for authorization
@@ -186,7 +186,7 @@ export const AttendenceByCountfilter = async (stdate,enddate) => {
 
 export const notificationbyId = async () => {
   try {
-    const response = await axios.get(`http://localhost:4000/api/notification`,{
+    const response = await axios.get(`http://137.184.230.216:4000/api/notification`,{
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}` // Use the token for authorization
@@ -216,7 +216,7 @@ export const postAttendance = async ({isPresent,assignedTrainersRef,isDate,_id})
 
   }
 
-  const apiUrl = 'http://localhost:4000/api/attendance'; // Replace with your actual API endpoint
+  const apiUrl = 'http://137.184.230.216:4000/api/attendance'; // Replace with your actual API endpoint
 
   try {
     const response = await axios.post(apiUrl, newData, {
@@ -240,7 +240,7 @@ export const getAttendance = async (date,course_id) => {
 
 
 
-  const apiUrl = `http://localhost:4000/api/attendance/${course_id}?${date}`; // Replace with your actual API endpoint
+  const apiUrl = `http://137.184.230.216:4000/api/attendance/${course_id}?${date}`; // Replace with your actual API endpoint
 
   try {
     const response = await axios.get(apiUrl, {
